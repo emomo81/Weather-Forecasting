@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^git rev-parse --show-toplevel$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
