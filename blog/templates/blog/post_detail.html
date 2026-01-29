@@ -1,0 +1,19 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<article>
+    <h1 style="color: #333;">{{ post.title }}</h1>
+    <p style="color: #888; font-size: 0.9rem; text-align: center; margin-bottom: 2rem;">
+        By {{ post.author }} | {{ post.created_at|date:"F d, Y at g:i a" }}
+    </p>
+    
+    <div style="text-align: left; color: #444; line-height: 1.8;">
+        {{ post.content|linebreaks }}
+    </div>
+</article>
+
+<div style="text-align: center; margin-top: 2rem;">
+    <a href="{% url 'blog:post_list' %}" class="btn">← Back to Blog</a>
+    <a href="{% url 'home:index' %}" class="btn">Home</a>
+</div>
+{% endblock %}

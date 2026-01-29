@@ -1,0 +1,27 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<h1>📝 Blog</h1>
+<br>
+
+{% if posts %}
+    {% for post in posts %}
+    <article style="background: #f8f9fa; padding: 1.5rem; border-radius: 10px; margin-bottom: 1.5rem;">
+        <h2 style="color: #333; margin-bottom: 0.5rem;">
+            <a href="{{ post.get_absolute_url }}" style="text-decoration: none; color: #667eea;">{{ post.title }}</a>
+        </h2>
+        <p style="color: #888; font-size: 0.9rem;">
+            By {{ post.author }} | {{ post.created_at|date:"F d, Y" }}
+        </p>
+        <p style="color: #666;">{{ post.content|truncatewords:30 }}</p>
+        <a href="{{ post.get_absolute_url }}" class="btn" style="font-size: 0.9rem; padding: 0.5rem 1rem;">Read More</a>
+    </article>
+    {% endfor %}
+{% else %}
+    <p style="text-align: center; color: #666;">No blog posts yet. Create one in the <a href="/admin/blog/post/add/">admin panel</a>!</p>
+{% endif %}
+
+<div style="text-align: center; margin-top: 2rem;">
+    <a href="{% url 'home:index' %}" class="btn">Back to Home</a>
+</div>
+{% endblock %}
