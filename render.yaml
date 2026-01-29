@@ -7,6 +7,7 @@ databases:
 services:
   - type: web
     name: myfirstproject
+    plan: free
     runtime: python
     buildCommand: "./build.sh"
     startCommand: "gunicorn MyfirstProject.wsgi:application"
