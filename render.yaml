@@ -20,3 +20,5 @@ services:
         generateValue: true
       - key: WEB_CONCURRENCY
         value: 4
+      - key: ACCUWEATHER_API_KEY
+        value: zpka_9fda2bbaef414e97a4234daaa7437522_82653c5e
