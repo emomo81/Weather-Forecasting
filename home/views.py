@@ -5,7 +5,7 @@ import json
 import os
 
 # AccuWeather API Configuration - Use environment variable for security
-API_KEY = os.environ.get('ACCUWEATHER_API_KEY', 'zpka_9fda2bbaef414e97a4234daaa7437522_82653c5e')
+API_KEY = os.environ.get('ACCUWEATHER_API_KEY', 'zpka_a417097e28de4c47b60989eb34393671_024f7ef9')
 BASE_URL = 'https://dataservice.accuweather.com'
 
 def index(request):
